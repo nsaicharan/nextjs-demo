@@ -13,6 +13,7 @@ export async function getStaticProps() {
   const posts = data.posts;
   return {
     props: { posts },
+    revalidate: 10,
   };
 }
 
@@ -28,9 +29,14 @@ export default function Home({ posts }) {
       <Header />
 
       <main className={styles.main}>
-        <div class="prose">
+        <div className="prose">
           <h1>Welcome to my blog!</h1>
           <ul>
+            <li>
+              <Link href="https://quora.com">
+                <a>Quora Home Page</a>
+              </Link>
+            </li>
             {posts.map((post) => (
               <li>
                 <Link href={`/post/${post.slug}`}>
