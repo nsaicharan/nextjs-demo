@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import Header from '../components/Header';
+import { motion } from 'framer-motion';
 
 function Login() {
   const router = useRouter();
@@ -10,14 +10,11 @@ function Login() {
   }
 
   return (
-    <>
-      <Header />
-      <form onSubmit={handleSubmit}>
-        <input type="text" name="username" id="" className="border" /> <br />
-        <input type="password" name="password" id="" /> <br />
-        <button>Submit</button>
-      </form>
-    </>
+    <form onSubmit={handleSubmit} className="text-center">
+      <button className="px-6 py-2 bg-gray-900 text-gray-100 rounded uppercase tracking-wide">
+        Login
+      </button>
+    </form>
   );
 }
 

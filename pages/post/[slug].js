@@ -6,11 +6,11 @@ function Post({ post }) {
   const router = useRouter();
 
   return (
-    <div className="px-4 my-12 mx-auto max-w-3xl">
+    <>
       {router.isFallback ? (
         <p>Loading...</p>
       ) : (
-        <>
+        <div className="px-4 mx-auto max-w-3xl">
           <Link href="/">
             <a className="inline-block mb-8">&larr; Back To Home</a>
           </Link>
@@ -18,9 +18,9 @@ function Post({ post }) {
             <h1>{post.title}</h1>
             <div dangerouslySetInnerHTML={{ __html: post.html }}></div>
           </article>
-        </>
+        </div>
       )}
-    </div>
+    </>
   );
 }
 

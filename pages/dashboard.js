@@ -1,13 +1,14 @@
-import Header from '../components/Header';
+import { motion } from 'framer-motion';
 
 function Dashboard({ name, blog, bio }) {
   return (
-    <>
-      <Header />
-      <h1>{name}</h1>
-      <p>Bio: {bio}</p>
-      <p>Blog: {blog}</p>
-    </>
+    <div className="flex justify-center">
+      <div>
+        <h1>{name}</h1>
+        <p>Bio: {bio}</p>
+        <p>Blog: {blog}</p>
+      </div>
+    </div>
   );
 }
 

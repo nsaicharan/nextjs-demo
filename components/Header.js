@@ -1,39 +1,32 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 function Header() {
+  const router = useRouter();
+
+  const links = [
+    { path: '/', value: 'Home' },
+    { path: '/about', value: 'About' },
+    { path: '/login', value: 'Login' },
+    { path: '/gallery', value: 'Gallery' },
+  ];
+
   return (
-    <>
-      <style jsx>{`
-        header {
-          text-align: center;
-          margin-top: 10px;
-        }
-
-        header a {
-          display: inline-block;
-          margin: 0 10px;
-          text-decoration: underline;
-        }
-      `}</style>
-
-      <header>
-        <Link href="/">
-          <a>Home</a>
+    <header className="mt-6 mb-10 text-center">
+      {links.map((link) => (
+        <Link href={link.path} key={link.path}>
+          <a
+            className={`
+              inline-block font-medium mr-4 text-gray-500 
+              hover:text-gray-900
+              ${router.pathname === link.path && 'text-gray-900'}
+            `}
+          >
+            {link.value}
+          </a>
         </Link>
-        <Link href="/about-me">
-          <a>About</a>
-        </Link>
-        <Link as="/post/1" href="/post/[id]">
-          <a>Post 1</a>
-        </Link>
-        <Link as="/post/2" href="/post/[id]">
-          <a>Post 2</a>
-        </Link>
-        <Link href="/login">
-          <a>Login</a>
-        </Link>
-      </header>
-    </>
+      ))}
+    </header>
   );
 }
 
