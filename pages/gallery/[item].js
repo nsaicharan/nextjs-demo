@@ -29,6 +29,7 @@ function Gallery({ item }) {
         <Image
           src={`/images/${item}.jpg`}
           priority
+          loading="eager"
           layout="fill"
           objectFit="cover"
         />
