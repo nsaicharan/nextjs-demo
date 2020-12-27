@@ -26,7 +26,12 @@ function Gallery({ item }) {
   return (
     <motion.div initial="initial" animate="animate" exit="exit">
       <motion.div layoutId={item} class="w-96 h-96 mx-auto relative">
-        <Image src={`/images/${item}.jpg`} layout="fill" objectFit="cover" />
+        <Image
+          src={`/images/${item}.jpg`}
+          priority
+          layout="fill"
+          objectFit="cover"
+        />
       </motion.div>
 
       <div className="max-w-md mx-auto">

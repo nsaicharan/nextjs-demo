@@ -17,6 +17,7 @@ function Gallery() {
               <Image
                 src={`/images/${item}.jpg`}
                 layout="fill"
+                priority
                 objectFit="cover"
               />
             </motion.a>
