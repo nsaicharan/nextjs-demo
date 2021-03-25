@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Layout from '../components/Layout';
 import { motion } from 'framer-motion';
 
 const { BLOG_URL, CONTENT_API_KEY } = process.env;
@@ -9,7 +8,7 @@ export async function getStaticProps() {
     `${BLOG_URL}/ghost/api/v3/content/posts/?key=${CONTENT_API_KEY}`
   );
   const data = await res.json();
-  const posts = data.posts;
+  const posts = data.posts.slice(1);
   return {
     props: { posts },
     revalidate: 10,

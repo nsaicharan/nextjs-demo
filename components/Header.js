@@ -6,7 +6,7 @@ function Header() {
 
   const links = [
     { path: '/', value: 'Home' },
-    { path: '/about', value: 'About' },
+    { path: '/graphql', value: 'Fetch Graphql Data' },
     { path: '/login', value: 'Login' },
     { path: '/gallery', value: 'Gallery' },
   ];

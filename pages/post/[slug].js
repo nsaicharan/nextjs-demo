@@ -45,11 +45,9 @@ export const getStaticPaths = async () => {
   );
   const data = await res.json();
 
-  const paths = data.posts.slice(1).map((post) => ({
+  const paths = data.posts.map((post) => ({
     params: { slug: post.slug },
   }));
-
-  console.log(paths);
 
   return {
     paths,
